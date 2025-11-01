@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Video Carousel - Interactive video player with educational content from Google developers">
+    <meta name="theme-color" content="#4285f4">
+    <title>Video Carousel</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    
+    <!-- Font optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-text">Video Carousel</span>
+                </div>
+                <nav class="nav-menu">
+                    <button class="nav-item active">Home</button>
+                    <button class="nav-item">Trending</button>
+                    <button class="nav-item">Subscriptions</button>
+                    <button class="nav-item">Library</button>
+                </nav>
+                <div class="header-actions">
+                    <button class="icon-button" aria-label="Search">
+                        <span class="material-icons">search</span>
+                    </button>
+                    <button class="icon-button" aria-label="Apps">
+                        <span class="material-icons">apps</span>
+                    </button>
+                    <button class="avatar-button">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face&auto=format" 
+                             alt="Profile" 
+                             width="32" 
+                             height="32"
+                             loading="lazy" />
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-container">
+                <!-- Hero Video Player -->
+                <section class="video-hero" aria-label="Featured Video">
+                    <div class="video-container">
+                        <div class="video-player" id="main-player">
+                            <iframe 
+                                id="main-iframe"
+                                src="https://www.youtube.com/embed/hdI2bqOjy3c?enablejsapi=1&modestbranding=1&rel=0"
+                                title="Featured Video"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
+                            <div class="video-overlay" id="video-overlay">
+                                <button class="play-button" id="play-button" aria-label="Play video">
+                                    <span class="material-icons">play_arrow</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h1 class="video-title" id="video-title">Video Carousel</h1>
+                            <div class="video-meta">
+                                <span class="channel-name">Google Developers</span>
+                                <span class="separator">•</span>
+                                <span class="view-count">1.2M views</span>
+                                <span class="separator">•</span>
+                                <span class="upload-date">2 days ago</span>
+                            </div>
+                            <div class="video-actions">
+                                <button class="action-button">
+                                    <span class="material-icons">thumb_up</span>
+                                    <span>Like</span>
+                                </button>
+                                <button class="action-button">
+                                    <span class="material-icons">share</span>
+                                    <span>Share</span>
+                                </button>
+                                <button class="action-button">
+                                    <span class="material-icons">bookmark</span>
+                                    <span>Save</span>
+                                </button>
+                                <button class="action-button">
+                                    <span class="material-icons">more_horiz</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Video Carousel -->
+                <section class="carousel-section" aria-label="Related Videos">
+                    <div class="carousel-header">
+                        <h2 class="carousel-title">Up next</h2>
+                        <button class="autoplay-toggle" id="autoplay-toggle">
+                            <span class="material-icons">play_arrow</span>
+                            <span>Autoplay</span>
+                            <div class="toggle-switch">
+                                <div class="toggle-track">
+                                    <div class="toggle-thumb"></div>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                    
+                    <div class="carousel-container">
+                        <button class="carousel-nav prev" id="carousel-prev" aria-label="Previous videos">
+                            <span class="material-icons">chevron_left</span>
+                        </button>
+                        
+                        <div class="carousel-wrapper" id="carousel-wrapper">
+                            <div class="carousel-track" id="carousel-track">
+                                <!-- Video items will be dynamically generated -->
+                            </div>
+                        </div>
+                        
+                        <button class="carousel-nav next" id="carousel-next" aria-label="Next videos">
+                            <span class="material-icons">chevron_right</span>
+                        </button>
+                    </div>
+                    
+                    <!-- Pagination dots -->
+                    <div class="carousel-pagination" id="carousel-pagination">
+                        <!-- Dots will be dynamically generated -->
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Loading indicator -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-spinner">
+            <div class="spinner-circle"></div>
+        </div>
+        <p class="loading-text">Loading videos...</p>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
