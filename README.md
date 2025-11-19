@@ -17,7 +17,9 @@ A modern, responsive video carousel featuring educational content from Google De
 - **🔄 Auto-play Carousel** - Optional autoplay with manual navigation controls
 - **📊 Real Educational Content** - Curated JavaScript, CSS, and web development videos
 
-## � Demo
+<img width="1896" height="913" alt="video-carousel" src="https://github.com/user-attachments/assets/157b1e08-bf34-4d3a-8ae7-02193c706288" />
+
+## � Demo https://syntaxsidekick.github.io/video-carousel/
 
 Experience the carousel with real Google Developer videos covering:
 - JavaScript Fundamentals & ES6+ Features
